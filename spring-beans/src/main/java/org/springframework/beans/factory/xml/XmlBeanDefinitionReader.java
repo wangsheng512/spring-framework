@@ -115,7 +115,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 
 	@Nullable
 	private NamespaceHandlerResolver namespaceHandlerResolver;
-
+	//对resource文件进行转换，将resource文件转换为document文件
 	private DocumentLoader documentLoader = new DefaultDocumentLoader();
 
 	@Nullable

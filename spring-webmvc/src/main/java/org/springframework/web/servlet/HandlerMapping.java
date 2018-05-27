@@ -128,6 +128,8 @@ public interface HandlerMapping {
 	 * any interceptors, or {@code null} if no mapping found
 	 * @throws Exception if there is an internal error
 	 */
+	//org.springframework.web.servlet.HandlerExecutionChain类的实例。
+	// 此实例包含可在控制器调用之前或之后调用的处理程序拦截器数组。
 	@Nullable
 	HandlerExecutionChain getHandler(HttpServletRequest request) throws Exception;
 

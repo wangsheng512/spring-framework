@@ -158,12 +158,14 @@ import org.springframework.web.util.WebUtils;
 public class DispatcherServlet extends FrameworkServlet {
 
 	/** Well-known name for the MultipartResolver object in the bean factory for this namespace. */
+	//声明一个多部分解析器
 	public static final String MULTIPART_RESOLVER_BEAN_NAME = "multipartResolver";
 
 	/** Well-known name for the LocaleResolver object in the bean factory for this namespace. */
 	public static final String LOCALE_RESOLVER_BEAN_NAME = "localeResolver";
 
 	/** Well-known name for the ThemeResolver object in the bean factory for this namespace. */
+	//主题解析器
 	public static final String THEME_RESOLVER_BEAN_NAME = "themeResolver";
 
 	/**
@@ -171,6 +173,7 @@ public class DispatcherServlet extends FrameworkServlet {
 	 * Only used when "detectAllHandlerMappings" is turned off.
 	 * @see #setDetectAllHandlerMappings
 	 */
+	//设置检测所有处理程序映射
 	public static final String HANDLER_MAPPING_BEAN_NAME = "handlerMapping";
 
 	/**
@@ -178,6 +181,7 @@ public class DispatcherServlet extends FrameworkServlet {
 	 * Only used when "detectAllHandlerAdapters" is turned off.
 	 * @see #setDetectAllHandlerAdapters
 	 */
+	//设置检测所有处理程序适配器
 	public static final String HANDLER_ADAPTER_BEAN_NAME = "handlerAdapter";
 
 	/**
