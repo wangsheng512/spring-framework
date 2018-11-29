@@ -98,7 +98,7 @@ public class BeanDefinitionReaderUtils {
 	 * for inner beans versus top-level beans)
 	 * @return the generated bean name
 	 * @throws BeanDefinitionStoreException if no unique name can be generated
-	 * for the given bean definition
+	 * for the given bean definition（生成bean 的 name）
 	 */
 	public static String generateBeanName(
 			BeanDefinition definition, BeanDefinitionRegistry registry, boolean isInnerBean)

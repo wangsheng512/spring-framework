@@ -1107,6 +1107,8 @@ public abstract class FrameworkServlet extends HttpServletBean implements Applic
 	 * @throws Exception in case of any kind of processing failure
 	 * @see javax.servlet.http.HttpServlet#doGet
 	 * @see javax.servlet.http.HttpServlet#doPost
+	 *
+	 * 抽象方法doService，它的子类实现的，典型的模块方法模式；
 	 */
 	protected abstract void doService(HttpServletRequest request, HttpServletResponse response)
 			throws Exception;

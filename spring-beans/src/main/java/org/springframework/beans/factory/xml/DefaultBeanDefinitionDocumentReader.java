@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
  * to produce this format). {@code <beans>} does not need to be the root
  * element of the XML document: this class will parse all bean definition elements
  * in the XML file, regardless of the actual root element.
- *
+ * 这个类将解析所有的bean定义元素
  * @author Rod Johnson
  * @author Juergen Hoeller
  * @author Rob Harrop
@@ -299,21 +299,21 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 
 	/**
 	 * Process the given bean element, parsing the bean definition
-	 * and registering it with the registry.
+	 * and registering it with the registry.处理给定的bean元素，解析bean定义并将其注册到注册表中。
 	 */
 	protected void processBeanDefinition(Element ele, BeanDefinitionParserDelegate delegate) {
 		BeanDefinitionHolder bdHolder = delegate.parseBeanDefinitionElement(ele);
 		if (bdHolder != null) {
 			bdHolder = delegate.decorateBeanDefinitionIfRequired(ele, bdHolder);
 			try {
-				// Register the final decorated instance.
+				// Register the final decorated instance.注册最终装饰的实例。
 				BeanDefinitionReaderUtils.registerBeanDefinition(bdHolder, getReaderContext().getRegistry());
 			}
 			catch (BeanDefinitionStoreException ex) {
 				getReaderContext().error("Failed to register bean definition with name '" +
 						bdHolder.getBeanName() + "'", ele, ex);
 			}
-			// Send registration event.
+			// Send registration event.最后发出响应事件，通知相关监听，这个bean已经加载完成。
 			getReaderContext().fireComponentRegistered(new BeanComponentDefinition(bdHolder));
 		}
 	}

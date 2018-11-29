@@ -57,6 +57,7 @@ public interface Resource extends InputStreamSource {
 	 * existence of a {@code Resource} handle only guarantees a valid
 	 * descriptor handle.
 	 */
+	//判断当前资源的状态，是否存在
 	boolean exists();
 
 	/**
@@ -68,6 +69,7 @@ public interface Resource extends InputStreamSource {
 	 * that the resource content cannot be read.
 	 * @see #getInputStream()
 	 */
+	//是否可读
 	default boolean isReadable() {
 		return true;
 	}
@@ -78,6 +80,7 @@ public interface Resource extends InputStreamSource {
 	 * and must be read and closed to avoid resource leaks.
 	 * <p>Will be {@code false} for typical resource descriptors.
 	 */
+	//是否处于打开状态
 	default boolean isOpen() {
 		return false;
 	}
@@ -153,6 +156,7 @@ public interface Resource extends InputStreamSource {
 	 * @return the resource handle for the relative resource
 	 * @throws IOException if the relative resource cannot be determined
 	 */
+	//提供了一个基于当前资源，创建相对资源的方法
 	Resource createRelative(String relativePath) throws IOException;
 
 	/**
@@ -162,6 +166,7 @@ public interface Resource extends InputStreamSource {
 	 * have a filename.
 	 */
 	@Nullable
+	//获取文件名
 	String getFilename();
 
 	/**
@@ -171,6 +176,7 @@ public interface Resource extends InputStreamSource {
 	 * from their {@code toString} method.
 	 * @see Object#toString()
 	 */
+	//用于在错误处理打印描述信息
 	String getDescription();
 
 }
